@@ -6,6 +6,7 @@
         <link type="text/css" rel="stylesheet" href="{{assert('style.css')}}">
         <title>@yield("title")</title>
         <meta charset="utf-8" />
+        @yield('head')
     </head>
 
     <body>

@@ -22,6 +22,7 @@ class PeticionesController extends Controller
             'tramiteAbandonados'=>'required|numeric',
             'tramiteConcluidos'=>'required|numeric',
         ]);/**validaciones de los campos*/
-
+        $data=['title'=>'Grafica'];
+        return view('grafica')->with($data);
     }
 }
