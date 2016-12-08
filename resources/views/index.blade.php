@@ -1,7 +1,7 @@
-@section('title',$title)
+@section('title',"SimuladorTGS")
 
 @section('content')
-    <h1>{{$title}}</h1>
+    <h1>SimuladorTGS</h1>
 @endsection
 
 @section('script')
