@@ -9,9 +9,7 @@
     </head>
 
     <body>
-        <header>
-            @include('template.header')
-        </header>
+        @include('template.header')
         <div id="content">
             @yield('content')
         </div>
