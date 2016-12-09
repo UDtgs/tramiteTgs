@@ -3,7 +3,7 @@
 <html lang="es">
 
     <head>
-        <link type="text/css" rel="stylesheet" href="{{asset('style.css')}}">
+        <link type="text/css" rel="stylesheet" href="{{asset('css/style.css')}}">
         <title>@yield("title")</title>
         <meta charset="utf-8" />
         @yield('head')
