@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class CalculosController extends Controller
 {
-    public function concurrenciaTramite($solicitante,$tramite,$tipoTramite,$total){
+    public function concurrenciaTramite($solicitante,$tramite,$tipoTramite,$total){ 
 
     }
 }
