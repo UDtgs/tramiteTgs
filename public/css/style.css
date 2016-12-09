@@ -53,19 +53,49 @@ input[type=number] {
     border: 3px solid #333;
     padding: 25px;
     margin: 25px;
-    width: 40%;
-    height: 300px;
+    width: 93%;
+    height: 350px;
     overflow: scroll;
 }
 
+.izq{
+    float: left;
+    width: 50%;
+}
+
+#submit{
+    background-color: #999999; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 20%;
+}
+
+.der{
+    float: right;
+    width: 50%;
+}
+
+.cen{
+    width: 100%;
+    align-content: center;
+}
+
+
+
 .home{
-    width: 300px;
     border: 3px solid #333;
-    padding: 25px;
-    margin: 25px;
     width: 70%;
     height: 300px;
-    overflow: scroll;
+    align-content: center;
+    margin: auto;
+    width: 60%;
+    padding: 25px;
+
 }
 
 footer {
