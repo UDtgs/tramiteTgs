@@ -10,7 +10,7 @@ class PeticionesController extends Controller
      * catga la vista principal
     */
     public function index(){
-        $data=['title'=>'SimuladorTGS tramites'];
+        $data=['title'=>'Simulador Trámites de Solicitud '];
         return view('index')->with($data);
     }
     /**

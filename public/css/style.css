@@ -85,7 +85,13 @@ input[type=number] {
     align-content: center;
 }
 
+.est1{
+    float: left;
+}
 
+.est2{
+    float: right;
+}
 
 .home{
     border: 3px solid #333;
@@ -95,7 +101,7 @@ input[type=number] {
     margin: auto;
     width: 60%;
     padding: 25px;
-
+    text-align: center;
 }
 
 footer {
