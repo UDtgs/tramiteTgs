@@ -9,6 +9,13 @@
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
 
     </div>
+    <div>
+        <strong>Cantidad de Tipo de Tramites: </strong>{{number_format($tipoTramite,0,',','.')}}<br>
+        <strong>Numero Inicial de Tramite: </strong>{{$numeroTramites}}<br>
+        <strong>Cantidad de Entidades Disponibles: </strong>{{$entidadesDisponibles}}<br>
+        <strong>Numero de ciudadanos Solicitantes: </strong>{{$numeroSolicitantes}}<br>
+        <strong>Tiempo Total de simulación: </strong>{{$tiempoTotal}}<br>
+    </div>
 @endsection
 
 @section('script')
@@ -20,17 +27,25 @@
                     x: -20 //center
                 },
                 subtitle: {
-                    text: 'Tramites',
+                    text: 'Medición con respecto al tiempo',
                     x: -20
                 },
                 xAxis: {
-                    categories: [{{$periodos}}]
+                    categories: [{{$periodos}}],
+                    title:{
+                        text: 'Periodo Tiempo en Horas',
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
                 },
                 yAxis: {
                     title: {
                         text: '' +
                         '' +
-                        'Tiempo'
+                        'Medición'
                     },
                     plotLines: [{
                         value: 0,
@@ -39,7 +54,7 @@
                     }]
                 },
                 tooltip: {
-                    valueSuffix: '°C'
+                    valueSuffix: ' - Unidades'
                 },
                 legend: {
                     layout: 'vertical',
@@ -54,11 +69,14 @@
                     name: 'Concurrencia Entidades',
                     data: [{{$concurrenciaEntidad}}]
                 }, {
-                    name: 'Entidades',
-                    data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+                    name: 'Tramites Concluidos',
+                    data: [{{$tramitesConcluidos}}]
                 }, {
-                    name: 'Tramites abandonados',
-                    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+                    name: 'Tramites No Concluidos',
+                    data: [{{$tramitesInconclusos}}]
+                }, {
+                    name: 'Media de Pasos Tramites',
+                    data: [{{$mediasPasosTramites}}]
                 }]
             });
         });

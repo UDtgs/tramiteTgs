@@ -37,8 +37,31 @@ class CalculosController extends Controller
      * @param $mediaPasos - media de pasos por tramite
      * @return - numero de tramites recalculado
     */
-    public function recalcularTramites($numeroTramites,$solicitante,$concurrenciaTramites,$mediaPasos){
-        return $numeroTramites+$concurrenciaTramites/($mediaPasos*$solicitante);
+    public function recalcularTramites($numeroTramites,$concluidos,$mediaPasos){
+        $aux=$mediaPasos;
+
+        return $numeroTramites+($aux<=0?1:$aux)-($concluidos/2);//-$concurrenciaTramites;
+    }
+
+    /**
+     * calcula los tramites concluidos e inconclusos con respecto al tiempo
+     * @param $numeroTramites- numero de tramites
+     * @param $tiempoTotal - tiempo total ingresado
+     * @param $tiempoPaso - tiempo promedio por paso
+     * @param $mediaPasos - media de pasos por tramite
+     * @return array - [tramites concluidos, tramites inconclusos]
+     */
+    public function calcularTramitesConcluidos($numeroTramites,$numeroEntidades){
+        $porcentage=$numeroEntidades/$numeroTramites;
+        $concluidos=$numeroTramites*$porcentage;
+        if($concluidos>=$numeroTramites):
+            $concluidos=$numeroTramites;
+            $inconclusos=0;
+        else:
+            $inconclusos=$numeroTramites-$concluidos;
+        endif;
+        //dd(['concluidos'=>$concluidos,'inconclusos'=>$inconclusos,'tramites'=>$numeroTramites,'entidades'=>$numeroEntidades]);
+        return ['concluidos'=>$concluidos,'inconclusos'=>$inconclusos];
     }
 
 }

@@ -16,7 +16,7 @@
 
             </section>
             <section class="der">
-                <label for="numeroTramites">Numero Tramites:</label><br/>
+                <label for="numeroTramites">Numero Tramites Iniciales:</label><br/>
                 <input id="numeroTramites" type="number" name="numeroTramites" placeholder="0" required="" /><br/><br/>
                 <label for="tiempoTotal">Tiempo Total (horas):</label><br/>
                 <input id="tiempoTotal" type="number" name="tiempoTotal" placeholder="0" required="" /><br/><br/>
