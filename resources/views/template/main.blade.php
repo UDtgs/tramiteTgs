@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
     <head>
@@ -15,7 +14,11 @@
             @yield('content')
         </div>
         <footer>
-            Teoria General de Sistemas 2016 - 3
+                <br>
+                Universidad Distrital Francisco José de Caldas<br>
+                Facultad Tecnologica<br>
+                Teoria General de Sistemas<br>
+                2016 -3<br>
         </footer>
         @yield('script')
     </body>
