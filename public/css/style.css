@@ -3,13 +3,6 @@ body {
 
 }
 
-div.scroll {
-    background-color: #00FFFF;
-    width: 100px;
-    height: 100px;
-    overflow: scroll;
-}
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -61,6 +54,16 @@ input[type=number] {
     padding: 25px;
     margin: 25px;
     width: 40%;
+    height: 300px;
+    overflow: scroll;
+}
+
+.home{
+    width: 300px;
+    border: 3px solid #333;
+    padding: 25px;
+    margin: 25px;
+    width: 70%;
     height: 300px;
     overflow: scroll;
 }

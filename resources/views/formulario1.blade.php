@@ -2,7 +2,7 @@
 @section('title',$title)
 
 @section('content')
-    <section class="formulario" id="formulario">
+    <section class="formulario">
         <h2 style="text-align: center">Formulario inicial</h2>
         @include('template.alert')
         <form action="{{route('formulario.procesar')}}" method="post">
