@@ -37,8 +37,8 @@ class CalculosController extends Controller
      * @param $mediaPasos - media de pasos por tramite
      * @return - numero de tramites recalculado
     */
-    public function recalcularTramites($numeroTramites,$solicitante,$tipoTramite,$mediaPasos){
-        return $numeroTramites+($this->concurrenciaTramite($solicitante,$tipoTramite,$mediaPasos)/($mediaPasos*$solicitante));
+    public function recalcularTramites($numeroTramites,$solicitante,$concurrenciaTramites,$mediaPasos){
+        return $numeroTramites+$concurrenciaTramites/($mediaPasos*$solicitante);
     }
 
 }
