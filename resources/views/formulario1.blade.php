@@ -10,16 +10,16 @@
 
             <section class="izq">
                 <label for="numeroSolicitantes">Número Solicitantes:</label><br/>
-                <input id="numeroSolicitantes" type="number" name="numeroSolicitantes" placeholder="0" required="" /><br/><br/>
+                <input min="10" max="500000" id="numeroSolicitantes" type="number" name="numeroSolicitantes" placeholder="0" required="" /><br/><br/>
                 <label for="entidadesDisponibles">Entidades Disponibles:</label><br/>
-                <input id="entidadesDisponibles" type="number" name="entidadesDisponibles" placeholder="0" required="" /><br/><br/>
+                <input min="2" max="500000" maxlength="5" id="entidadesDisponibles" type="number" name="entidadesDisponibles" placeholder="0" required="" /><br/><br/>
 
             </section>
             <section class="der">
                 <label for="numeroTramites">Numero Tramites Iniciales:</label><br/>
-                <input id="numeroTramites" type="number" name="numeroTramites" placeholder="0" required="" /><br/><br/>
+                <input min="2" max="500000" id="numeroTramites" type="number" name="numeroTramites" placeholder="0" required="" /><br/><br/>
                 <label for="tiempoTotal">Tiempo Total (horas):</label><br/>
-                <input id="tiempoTotal" type="number" name="tiempoTotal" placeholder="0" required="" /><br/><br/>
+                <input min="10" max="5000" id="tiempoTotal" type="number" name="tiempoTotal" placeholder="0" required="" /><br/><br/>
 
             </section>
 
