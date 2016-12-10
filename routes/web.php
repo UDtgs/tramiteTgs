@@ -14,3 +14,5 @@
 Route::get('/',['uses'=>'PeticionesController@index','as'=>'index']);
 Route::get('/formulario',['uses'=>'PeticionesController@formulario1','as'=>'formulario']);
 Route::post('/formulario',['uses'=>'PeticionesController@procesarFormulario1','as'=>'formulario.procesar']);
+/** Graficas */
+Route::get('/grfica/{name}',['uses'=>'PeticionesController@cargarGrafica','as'=>'grafica']);

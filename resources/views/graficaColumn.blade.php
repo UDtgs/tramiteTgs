@@ -3,15 +3,17 @@
 
 @section('head')
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <style type="text/css">
+        ${demo.css}
+    </style>
 @endsection
 
 @section('content')
     <div id="btn">
+        <a href="{{route('grafica','lineas')}}">Grafica lineas</a>
         <a href="{{route('grafica','polar')}}">Grafica polar</a>
-        <a href="{{route('grafica','columnas')}}">Grafica Columnas</a>
     </div>
-    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
-    </div>
+    <div id="container" style="min-width: 310px; max-width: 400px; height: 400px; margin: 0 auto"></div>
     <div>
         <strong>Cantidad de Tipo de Tramites: </strong>{{number_format($tipoTramite,0,',','.')}}<br>
         <strong>Numero Inicial de Tramite: </strong>{{$numeroTramites}}<br>
@@ -25,45 +27,38 @@
     <script type="text/javascript">
         $(function () {
             $('#container').highcharts({
+                chart: {
+                    type: 'column'
+                },
                 title: {
-                    text: 'Line de tiempo de los tramites',
-                    x: -20 //center
+                    text: 'Tramites'
                 },
                 subtitle: {
-                    text: 'Medición con respecto al tiempo',
-                    x: -20
+                    text: 'Medición con respecto al tiempo'
                 },
                 xAxis: {
                     categories: [{{$periodos}}],
-                    title:{
-                        text: 'Periodo Tiempo en Horas',
-                    },
-                    plotLines: [{
-                        value: 0,
-                        width: 1,
-                        color: '#808080'
-                    }]
+                    crosshair: true
                 },
                 yAxis: {
+                    min: 0,
                     title: {
-                        text: '' +
-                        '' +
-                        'Medición'
-                    },
-                    plotLines: [{
-                        value: 0,
-                        width: 1,
-                        color: '#808080'
-                    }]
+                        text: 'Medición'
+                    }
                 },
                 tooltip: {
-                    valueSuffix: ' - Unidades'
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
                 },
-                legend: {
-                    layout: 'vertical',
-                    align: 'right',
-                    verticalAlign: 'middle',
-                    borderWidth: 0
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
                 },
                 series: [{
                     name: 'Concurrencia Tramites',

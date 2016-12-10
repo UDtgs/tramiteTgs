@@ -84,6 +84,26 @@ class PeticionesController extends Controller
             'numeroSolicitantes'=>$request->numeroSolicitantes,
             'tiempoTotal'=>$request->tiempoTotal,
         ];
+        session(['data'=>$data]);
         return view('grafica')->with($data);
+    }
+    /**
+     * carga una grafica en espesifico
+     */
+    public function cargarGrafica($grafica){
+        $data=session()->get('data');
+        $vista="";
+        switch ($grafica){
+            case 'polar':
+                $vista='graficaPolar';
+                break;
+            case 'columnas':
+                $vista='graficaColumn';
+                break;
+            default:
+                $vista='grafica';
+                break;
+        }
+        return view($vista)->with($data);
     }
 }
