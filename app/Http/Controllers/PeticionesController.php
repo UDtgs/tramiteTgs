@@ -25,10 +25,10 @@ class PeticionesController extends Controller
     */
     public function procesarFormulario1(Request $request){
         $this->validate($request,[
-            'numeroSolicitantes'=>'required|numeric',
-            'entidadesDisponibles'=>'required|numeric',
-            'numeroTramites'=>'required|numeric',
-            'tiempoTotal'=>'required|numeric',
+            'numeroSolicitantes'=>'required|numeric|min:10|max:500000',
+            'entidadesDisponibles'=>'required|numeric|min:2|max:500000',
+            'numeroTramites'=>'required|numeric|min:2|max:500000',
+            'tiempoTotal'=>'required|numeric:min:10|max:5000',
         ]);/**validaciones de los campos*/
         $concurrenciaEntidad="";/**Cantidad de entidades que reciben solicitudes de tramites*/
         $concurrenciaTramite="";/**Establece la cantidad de los diferentes tramites que estan siendo solicitados*/

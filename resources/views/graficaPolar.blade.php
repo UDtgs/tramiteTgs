@@ -45,7 +45,7 @@
                     max: 360,
                     labels: {
                         formatter: function () {
-                            return this.value + ' t (horas)';
+                            return this.value + '°';
                         }
                     }
                 },
