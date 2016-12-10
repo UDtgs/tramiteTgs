@@ -8,9 +8,6 @@
             <p>Facilitar al ciudadano mostrar su información en diversos trámites de solicitud de
                 servicios o beneficios</p>
 
-
-
-
         <h4>Estudiantes:</h4>
         <section>
             <p>Edisson Ruiz Cardenas</p>
@@ -21,13 +18,8 @@
         </section>
 
 
-
     </section>
 
-
-
-
 @endsection
-
 @section('script')
 @endsection

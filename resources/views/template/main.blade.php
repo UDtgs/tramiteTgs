@@ -10,10 +10,12 @@
 
     <body>
         @include('template.header')
+        <br/><br/>
         <div id="content">
             @yield('content')
         </div>
-        <footer>
+        <br/><br/>
+        <footer class="footer">
                 <br>
                 Universidad Distrital Francisco José de Caldas<br>
                 Facultad Tecnologica<br>

@@ -22,6 +22,9 @@
 @endsection
 
 @section('script')
+
+
+
     <script type="text/javascript">
         $(function () {
             $('#container').highcharts({
@@ -86,4 +89,5 @@
     </script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
 @endsection
